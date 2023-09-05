@@ -8,6 +8,10 @@ from datetime import datetime
 app = Flask(__name__)
 base_url = "https://app.ylytic.com/ylytic/test"
 
+@app.route('/', methods=['GET'])
+def home():
+    return {"success":True,"message":"Open /search"}
+
 @app.route('/search', methods=['GET'])
 def search_comments():
     search_author = request.args.get('search_author')
